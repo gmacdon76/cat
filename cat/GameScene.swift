@@ -7,16 +7,31 @@
 //
 
 import SpriteKit
+import AVFoundation
 
 class GameScene: SKScene {
-    override func didMoveToView(view: SKView) {
-        /* Setup your scene here */
-        let myLabel = SKLabelNode(fontNamed:"Chalkduster")
-        myLabel.text = "Hello, World!"
-        myLabel.fontSize = 45
-        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
+    
+    var purr: AVAudioPlayer!
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder) is not used in this app")
+    }
+    
+    override init(size: CGSize) {
         
-        self.addChild(myLabel)
+        super.init(size: size)
+        
+        self.purr = setupAudioPlayerWithFile("cat-purring", type: "mp3")
+        
+        anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        
+        let background = SKSpriteNode(imageNamed: "moxie")
+        addChild(background)
+    }
+    
+    override func didMoveToView(view: SKView) {
+        
+        //set up scene here
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -25,21 +40,48 @@ class GameScene: SKScene {
         for touch in touches {
             let location = touch.locationInNode(self)
             
-            let sprite = SKSpriteNode(imageNamed:"Spaceship")
+            print("begin")
+            purr.play()
             
-            sprite.xScale = 0.5
-            sprite.yScale = 0.5
-            sprite.position = location
-            
-            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
-            
-            sprite.runAction(SKAction.repeatActionForever(action))
-            
-            self.addChild(sprite)
         }
     }
    
+
+
+override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    
+    
+    for touch in touches {
+        let location = touch.locationInNode(self)
+        
+        print("move")
+        purr.play()
+    }
+}
+
+override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    
+    
+    for touch in touches {
+        let location = touch.locationInNode(self)
+        
+        print("end")
+    }
+    }
+    
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
+    }
+    
+    func setupAudioPlayerWithFile(file: String, type: String) -> AVAudioPlayer? {
+        
+        if let url = NSBundle.mainBundle().URLForResource(file, withExtension: type) {
+            do {
+                return try AVAudioPlayer(contentsOfURL: url)
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        }
+        return nil
     }
 }

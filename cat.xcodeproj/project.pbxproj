@@ -16,6 +16,7 @@
 		12BE93FB1C7A856A00BD2472 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12BE93F91C7A856A00BD2472 /* LaunchScreen.storyboard */; };
 		12BE94061C7A856A00BD2472 /* catTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BE94051C7A856A00BD2472 /* catTests.swift */; };
 		12BE94111C7A856A00BD2472 /* catUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BE94101C7A856A00BD2472 /* catUITests.swift */; };
+		12F86F5B1C7EA8DD00C8CBA6 /* cat-purring.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 12F86F5A1C7EA8DD00C8CBA6 /* cat-purring.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		12BE940C1C7A856A00BD2472 /* catUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = catUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		12BE94101C7A856A00BD2472 /* catUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = catUITests.swift; sourceTree = "<group>"; };
 		12BE94121C7A856A00BD2472 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12F86F5A1C7EA8DD00C8CBA6 /* cat-purring.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "cat-purring.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		12BE93EB1C7A856A00BD2472 /* cat */ = {
 			isa = PBXGroup;
 			children = (
+				12F86F5A1C7EA8DD00C8CBA6 /* cat-purring.mp3 */,
 				12BE93EC1C7A856A00BD2472 /* AppDelegate.swift */,
 				12BE93EE1C7A856A00BD2472 /* GameScene.sks */,
 				12BE93F01C7A856A00BD2472 /* GameScene.swift */,
@@ -237,6 +240,7 @@
 			files = (
 				12BE93EF1C7A856A00BD2472 /* GameScene.sks in Resources */,
 				12BE93FB1C7A856A00BD2472 /* LaunchScreen.storyboard in Resources */,
+				12F86F5B1C7EA8DD00C8CBA6 /* cat-purring.mp3 in Resources */,
 				12BE93F81C7A856A00BD2472 /* Assets.xcassets in Resources */,
 				12BE93F61C7A856A00BD2472 /* Main.storyboard in Resources */,
 			);
@@ -492,6 +496,7 @@
 				12BE94171C7A856A00BD2472 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		12BE94181C7A856A00BD2472 /* Build configuration list for PBXNativeTarget "catTests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +505,7 @@
 				12BE941A1C7A856A00BD2472 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		12BE941B1C7A856A00BD2472 /* Build configuration list for PBXNativeTarget "catUITests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +514,7 @@
 				12BE941D1C7A856A00BD2472 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
